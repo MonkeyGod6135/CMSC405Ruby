@@ -50,7 +50,7 @@ for i in 0..3 do
     print "#{i}. Ho!"
 end 
 
-# for loops are used rarle in ruby since rubby has methods define in various
+# for loops are used rarly in ruby since rubby has methods define in various
 # classes that are equivalent to the for loop
 puts 
 3.times do
