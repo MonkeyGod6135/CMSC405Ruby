@@ -80,5 +80,25 @@ puts false && this_will_cause_an_error
 
 # If the sub-ecpression are joined by ||, the interpreter will skip the evaluation of
 # all subsquent expressions when the first false sub-exprssion is encountered
-puts true || this_will_cause_an_error
-puts false || this_will_cause_an_error
+#puts true || this_will_cause_an_error
+#puts false || this_will_cause_an_error
+
+# whenever you need to use If-else statements, you should consider using
+# the ruby case statement. In other programming launglauges its known as a sitch statement
+# the componets of the ruby case statement are:
+# case - starts with a case statement def. takes a variable you are going to work with
+# when - every condition that can be matched is one when statement
+capacity = 25
+
+case capacity
+when 0 
+    puts ' you ran out of gas'
+when 1..20
+    puts 'The tank is almst empty. find a gas station'
+when 21..70
+    puts 'you should be ok for now'
+when 71..100
+    puts 'tank is almost full'
+else
+    puts "Error: cap has invalid value #{capacity}"
+end

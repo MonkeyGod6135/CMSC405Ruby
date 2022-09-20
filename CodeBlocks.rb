@@ -66,3 +66,50 @@ call_block_greeting {|name| puts "Hello there #{name}"}
 # code blocks are used throughout ruby with iterators and collctions such as an array.
 moreanimals = ['lions and', 'tigers and','bears','oh my']
 moreanimals.each {|a| print a," "}
+puts
+('a' .. 'e').each {|char| print char}
+
+# There are oter iterator methods in ruby, like upto
+puts
+3.upto(6) {|i| print i}
+
+# Code blocks may be returned by functions, but first they miust be converted into
+# proc objects. Ruby has a function that is named lambda thats converts a code block into a proc object
+def n_times thing
+    lambda {|n| thing * n} 
+end 
+
+# call n_times and store its retun in a variable
+# {|n| 23 * n} 
+p1 = n_times 23
+puts p1.class
+
+# To execute the code block contained in p1, use the call statement
+puts p1.call 3
+puts p1.call 4
+
+# call n_times and store its return in a variable, but 
+# give it a different argument
+# {|n| "Hello" * n }
+p2 = n_times "Hello "
+
+# To execute the code block contained in p2, use the call statement
+puts p2.call 3 
+
+# this function contains a do - end block that will be returned as a proc
+def day_of_week
+    lambda do |today|
+        if today.saturday?
+             'Do chores around the house'
+        elsif today.sunday?
+             'Relax.'
+        else
+             'go to school.'
+        end
+    end
+end
+
+# call day of week and store its return in a variable
+d = day_of_week
+# To execute the code block contained in p2, use the call statement
+puts d.call Time.now
