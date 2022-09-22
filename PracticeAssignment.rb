@@ -7,7 +7,7 @@ if  x.even?
 else 
     'Integer is odd.'
 end
-# 2. Write a function named odd_or_even that takes an integer as a parameter 
+# 2. Write a function named odd_or_even that takes an integer as a paramete
 # and returns the String 'Integer is even.', if the integer parameter is even, else 
 # it returns 'Integer is odd'.
 def odd_or_even x
